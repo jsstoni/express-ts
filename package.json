@@ -1,0 +1,12 @@
+{
+  "name": "express-ts",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "expressjs",
+    "typescript"
+  ],
+  "author": "jsstoni",
+  "license": "MIT"
+}
