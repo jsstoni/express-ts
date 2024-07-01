@@ -3,11 +3,15 @@ import pinoHTTP from 'pino-http';
 
 const logger = pino({
   transport: {
-    target: 'pino-pretty',
-    options: {
-      ignore: 'pid,hostname',
-      singleLine: true,
-    },
+    targets: [
+      {
+        target: 'pino-pretty',
+        options: {
+          ignore: 'pid,hostname',
+          singleLine: true,
+        },
+      },
+    ],
   },
   name: 'Server',
 });
