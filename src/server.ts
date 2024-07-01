@@ -5,10 +5,9 @@ import helmet from 'helmet';
 import errorHandler from '@/middleware/error-handler';
 import rateLimit from '@/middleware/rate-limit';
 import routes from '@/routes';
-import pino from 'pino';
+import { logger, middleware } from '@/middleware/logger';
 
 const app: Application = express();
-const logger = pino({ name: 'Server' });
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -27,9 +26,13 @@ app.options('*', cors());
 app.use(helmet());
 app.disable('x-powered-by');
 
-//rate limit
+// Middleware rate limit
 app.use(rateLimit);
 
+// Middleware request logger
+app.use(middleware);
+
+// config routes
 app.use('/api', routes);
 
 // Error handlers
