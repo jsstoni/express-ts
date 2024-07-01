@@ -12,3 +12,5 @@ export const NODE_ENV = env
   .asEnum(validEnvironments) as Environment;
 
 export const PORT = env.get('PORT').required().asPortNumber();
+
+export const DATABASE_URL = env.get('DATABASE_URL').required().asString();
