@@ -1,6 +1,7 @@
 import compression from 'compression';
 import cors from 'cors';
 import express, { Application } from 'express';
+import helmet from 'helmet';
 
 const app: Application = express();
 
@@ -16,5 +17,9 @@ app.use(compression());
 // Middelware CORS
 app.use(cors());
 app.options('*', cors());
+
+// Middleware security
+app.use(helmet());
+app.disable('x-powered-by');
 
 export { app };
