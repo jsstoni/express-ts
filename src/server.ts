@@ -5,8 +5,10 @@ import helmet from 'helmet';
 import errorHandler from '@/middleware/error-handler';
 import rateLimit from '@/middleware/rate-limit';
 import routes from '@/routes';
+import pino from 'pino';
 
 const app: Application = express();
+const logger = pino({ name: 'Server' });
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -33,4 +35,4 @@ app.use('/api', routes);
 // Error handlers
 app.use(errorHandler);
 
-export { app };
+export { app, logger };

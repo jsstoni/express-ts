@@ -1,5 +1,5 @@
-import { app } from '@/server';
+import { app, logger } from '@/server';
 
 app.listen(8000, () => {
-  console.log('server start');
+  logger.info('Server start');
 });
