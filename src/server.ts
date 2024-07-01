@@ -2,6 +2,7 @@ import compression from 'compression';
 import cors from 'cors';
 import express, { Application } from 'express';
 import helmet from 'helmet';
+import errorHandler from '@/middleware/error-handler';
 
 const app: Application = express();
 
@@ -21,5 +22,8 @@ app.options('*', cors());
 // Middleware security
 app.use(helmet());
 app.disable('x-powered-by');
+
+// Error handlers
+app.use(errorHandler);
 
 export { app };
