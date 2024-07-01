@@ -1,4 +1,5 @@
 import compression from 'compression';
+import cors from 'cors';
 import express, { Application } from 'express';
 
 const app: Application = express();
@@ -11,5 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // Middleware to compress responses
 app.use(compression());
+
+// Middelware CORS
+app.use(cors());
+app.options('*', cors());
 
 export { app };
