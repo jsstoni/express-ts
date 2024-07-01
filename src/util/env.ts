@@ -14,3 +14,5 @@ export const NODE_ENV = env
 export const PORT = env.get('PORT').required().asPortNumber();
 
 export const DATABASE_URL = env.get('DATABASE_URL').required().asString();
+
+export const JWT_SECRET = env.get('JWT_SECRET').required().asString();

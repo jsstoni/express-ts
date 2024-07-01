@@ -1,6 +1,6 @@
 {
   "name": "express-ts",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "main": "index.ts",
   "scripts": {
     "dev": "tsx watch --clear-screen=false src/index.ts",
@@ -20,6 +20,7 @@
     "@types/compression": "^1.7.5",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.14.9",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
     "@typescript-eslint/parser": "^7.14.1",
@@ -43,6 +44,7 @@
     "express-rate-limit": "^7.3.1",
     "helmet": "^7.1.0",
     "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
     "pino": "^9.2.0",
     "pino-http": "^10.1.0",
     "rimraf": "^5.0.7"
