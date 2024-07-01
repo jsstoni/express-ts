@@ -4,6 +4,7 @@ import express, { Application } from 'express';
 import helmet from 'helmet';
 import errorHandler from '@/middleware/error-handler';
 import rateLimit from '@/middleware/rate-limit';
+import routes from '@/routes';
 
 const app: Application = express();
 
@@ -26,6 +27,8 @@ app.disable('x-powered-by');
 
 //rate limit
 app.use(rateLimit);
+
+app.use('/api', routes);
 
 // Error handlers
 app.use(errorHandler);
