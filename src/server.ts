@@ -6,11 +6,14 @@ import errorHandler from '@/middleware/error-handler';
 import rateLimit from '@/middleware/rate-limit';
 import routes from '@/routes';
 import { logger, middleware } from '@/middleware/logger';
+import { limitPayloadSize } from '@/middleware/load-size';
 
 const app: Application = express();
 
 // Middleware to parse JSON bodies
-app.use(express.json());
+app.use(express.json({ limit: '1mb' }));
+
+app.use(limitPayloadSize);
 
 // Middleware to parse URL-encoded bodies
 app.use(express.urlencoded({ extended: true }));
